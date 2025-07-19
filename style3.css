@@ -1,0 +1,440 @@
+/* === GLOBAL === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+    background: url('images/back.png') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* === HEADER === */
+.main-header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 15px 40px;
+    z-index: 999;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+}
+
+/* === NAV MENU === */
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.nav-menu a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #ffd700;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-menu a:hover {
+    color: #ffd700;
+    transform: scale(1.1);
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger-line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+    .offer-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .offer-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 16px 16px 0 0;
+    }
+
+    .offer-details {
+        padding: 15px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .offer-details h3 {
+        font-size: 1.3rem;
+    }
+
+    .offer-details p {
+        font-size: 0.9rem;
+    }
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.logo-link h1 {
+    color: white;
+    text-decoration: none;
+}
+
+/* Intro Section */
+.intro-text {
+    margin-top: 140px;
+    text-align: center;
+    padding: 60px 20px 40px;
+    margin-bottom: 200px;
+}
+
+.intro-text h1 {
+    font-size: 40px;
+    font-family: 'Playfair Display', serif;
+}
+
+.intro-text span {
+    color: #f39c12;
+}
+
+.card-slider-section {
+    padding: 80px 5%;
+    background-color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    margin-top: 50px;
+}
+
+.section-title {
+    font-size: 2.4rem;
+    color: #333;
+    margin-bottom: 40px;
+    font-family: 'Playfair Display', serif;
+}
+
+.card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.card-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    /* 🔽 Slightly smaller */
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    /* 🔽 Slightly smaller text */
+    line-height: 1.4;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+.card-button:hover {
+    background-color: #f39c12;
+    color: #000;
+}
+
+
+/* Card Style */
+.offer-card {
+    display: flex;
+    background-color: #f9f9f9;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+
+}
+
+.offer-card:hover {
+    transform: translateY(-6px);
+}
+
+.offer-card img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.offer-details {
+    padding: 20px;
+    text-align: left;
+    color: #333;
+    flex: 1;
+}
+
+.offer-details h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+.offer-details p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
+.explore-btn {
+    margin-top: 15px;
+    background-color: #3498db;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.explore-btn:hover {
+    background-color: #2980b9;
+}
+
+/* === FOOTER === */
+.footer {
+    background-color: #000;
+    color: white;
+    padding: 40px 0 20px;
+    width: 100%;
+}
+
+.footer .copyright {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #aaa;
+    border-top: 1px solid #333;
+    margin-top: 30px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.footer-left,
+.footer-right,
+.footer-center {
+    flex: 1 1 300px;
+}
+
+.footer-left h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.footer-left p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.footer-right h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-right ul li {
+    margin-bottom: 10px;
+}
+
+.footer-right a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.footer-right a:hover {
+    color: #f39c12;
+}
+
+.footer-center {
+    text-align: center;
+}
+
+.footer-center h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer-map {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* ✅ Responsive Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .footer-left,
+    .footer-right,
+    .footer-center {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .footer-map iframe {
+        height: 200px;
+    }
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #ccc;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 0 6px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a i {
+    pointer-events: none;
+}
+
+/* Popup effect + original hover colors */
+.social-icons a.facebook:hover {
+    color: #1877f2;
+    transform: scale(1.2);
+}
+
+.social-icons a.instagram:hover {
+    color: #ff0a54;
+    transform: scale(1.2);
+}
+
+.social-icons a.youtube:hover {
+    color: #ff0000;
+    transform: scale(1.2);
+}
+
+.social-icons a.twitter:hover {
+    color: #1da1f2;
+    transform: scale(1.2);
+}
+
+.social-icons a.pinterest:hover {
+    color: red;
+    transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: absolute;
+        top: 70px;
+        right: 40px;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 20px;
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        border-radius: 10px;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .main-header {
+        background-color: black;
+    }
+
+
+}

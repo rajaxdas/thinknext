@@ -1,0 +1,386 @@
+/* === GLOBAL === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  background: url('images/forest.png') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === HEADER === */
+.main-header {
+  position: relative;
+  top: 0;
+  width: 100%;
+  padding: 15px 40px;
+  z-index: 999;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+}
+
+/* === NAV MENU === */
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #ffd700;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-menu a:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger-line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: absolute;
+    top: 70px;
+    right: 40px;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 10px;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .main-header {
+    background-color: black;
+  }
+}
+
+
+/* === CONTACT FORM === */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  margin-top: 100px;
+
+}
+
+.intro-text {
+  margin-top: 140px;
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+.intro-text h1 {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.intro-text h2 {
+  font-size: 28px;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.highlight-red {
+  color: red !important;
+}
+
+.highlight-yellow {
+  color: #ffd700 !important;
+}
+
+.form {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  animation: fadeIn 1s ease-in-out;
+  margin: 30px auto;
+}
+
+.form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  color: #ccc;
+}
+
+.form textarea {
+  resize: vertical;
+}
+
+.form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form button:hover {
+  background-color: #ffd700;
+  color: black;
+}
+
+.logo-link {
+  text-decoration: none;
+}
+
+.logo-link h1 {
+  color: white;
+  text-decoration: none;
+}
+
+/* === FOOTER === */
+.footer {
+  background-color: #000;
+  color: white;
+  padding: 40px 0 20px;
+  width: 100%;
+}
+
+.footer .copyright {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #aaa;
+  border-top: 1px solid #333;
+  margin-top: 30px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.footer-left,
+.footer-right,
+.footer-center {
+  flex: 1 1 300px;
+}
+
+.footer-left h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.footer-left p {
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.footer-right h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.footer-right ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-right ul li {
+  margin-bottom: 10px;
+}
+
+.footer-right a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.footer-right a:hover {
+  color: #f39c12;
+}
+
+.footer-center {
+  text-align: center;
+}
+
+.footer-center h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.footer-map {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* ✅ Responsive Footer */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .footer-left,
+  .footer-right,
+  .footer-center {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .footer-map iframe {
+    height: 200px;
+  }
+}
+
+.social-icons a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: #ccc;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 6px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a i {
+  pointer-events: none;
+}
+
+/* Popup effect + original hover colors */
+.social-icons a.facebook:hover {
+  color: #1877f2;
+  transform: scale(1.2);
+}
+
+.social-icons a.instagram:hover {
+  color: #ff0a54;
+  transform: scale(1.2);
+}
+
+.social-icons a.youtube:hover {
+  color: #ff0000;
+  transform: scale(1.2);
+}
+
+.social-icons a.twitter:hover {
+  color: #1da1f2;
+  transform: scale(1.2);
+}
+
+.social-icons a.pinterest:hover {
+  color: red;
+  transform: scale(1.2);
+}
