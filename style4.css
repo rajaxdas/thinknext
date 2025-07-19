@@ -183,8 +183,6 @@ body {
     /* Light blue border on hover */
 }
 
-
-
 .team-member img {
     width: 140px;
     height: 140px;
@@ -578,7 +576,11 @@ body {
 @media (max-width: 768px) {
     .intro-text {
         padding: 0 20px;
-        height: auto;
+        min-height: 90dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         text-align: center;
     }
 
