@@ -133,10 +133,12 @@ body {
 
 /* Intro Section */
 .intro-text {
-    margin-top: 140px;
-    text-align: center;
-    padding: 60px 20px 40px;
-    margin-bottom: 200px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 90dvh;
+
 }
 
 .intro-text h1 {
