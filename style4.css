@@ -103,11 +103,12 @@ body {
 
 /* Intro Section */
 .intro-text {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   height: 90dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90dvh;
+    min-height: 90dvb;
 
 }
 
@@ -571,5 +572,19 @@ body {
         font-size: 1rem;
         line-height: 1.6;
         padding: 0 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-text {
+        padding: 0 20px;
+        height: auto;
+        text-align: center;
+    }
+
+    .intro-text h1 {
+        font-size: 28px;
+        line-height: 1.4;
+        text-align: center;
     }
 }
